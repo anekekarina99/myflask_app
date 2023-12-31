@@ -1,13 +1,14 @@
 from flask import Flask, request, render_template
 import numpy as np
-import pickle
+from joblib import load
 
 app = Flask(__name__)
 
 # Prediction function
 def ValuePredictor(to_predict_list):
-    to_predict = np.array(to_predict_list).reshape(1, 6)  # Change to 6 features
-    loaded_model = pickle.load(open("model.pkl", "rb"))
+    to_predict = np.array(to_predict_list).reshape(1, 6)  # Reshape for 6 features
+    # Load the model using joblib
+    loaded_model = load("model.joblib")  # Ensure the model file is named correctly
     result = loaded_model.predict(to_predict)
     return result[0]
 
