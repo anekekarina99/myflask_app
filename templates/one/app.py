@@ -26,11 +26,13 @@ def result():
 
         # Update prediction labels
         if int(result) == 0:
-            prediction = 'TIDAK SEHAT'
-        elif int(result) == 1:
-            prediction = 'SEDANG'
-        elif int(result) == 2:
             prediction = 'BAIK'
+        elif int(result) == 1:
+            prediction = 'SANGAT TIDAK SEHAT'
+        elif int(result) == 3:
+            prediction = 'TIDAK SEHAT'
+        elif int(result) == 2:
+            prediction = 'SEDANG'
         else:
             prediction = 'Invalid Result'  # Handle unexpected results
 

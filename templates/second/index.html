@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediksi Polutan Udara</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Prediksi Polutan Udara</h2>
+        <form action="{{ url_for('predict') }}" method="post">
+            <div class="form-group">
+                <label for="pm10">PM10:</label>
+                <input type="number" class="form-control" id="pm10" placeholder="Masukkan nilai PM10" name="pm10" required>
+            </div>
+            <div class="form-group">
+                <label for="pm25">PM2.5:</label>
+                <input type="number" class="form-control" id="pm25" placeholder="Masukkan nilai PM2.5" name="pm25" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Prediksi</button>
+        </form>
+        {% if prediction %}
+        <h3>Hasil Prediksi:</h3>
+        <p>{{ prediction }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

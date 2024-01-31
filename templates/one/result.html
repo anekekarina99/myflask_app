@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Quality Prediction Result</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            padding: 20px;
+            background-color: #e3f2fd;
+            text-align: center;
+        }
+        h1 {
+            color: #0d47a1;
+            
+        }
+        .result-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            max-width: 500px;
+            margin: auto;
+            display: inline-block;
+        }
+        p {
+            color: #0d47a1;
+            font-size: 18px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #1e88e5;
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            background-color: #1565c0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Air Quality Prediction Result</h1>
+    <div class="result-container">
+        <p>Your air quality prediction is:</p>
+        <p><strong>{{ prediction }}</strong></p>
+        <a href="/">Make Another Prediction</a>
+    </div>
+</body>
+</html>
